@@ -1,6 +1,8 @@
 -- | Exercises on Lists
 module Koans.Lists
 
+-- import Prelude.Vect (head)
+
 -- | What is the type of this list.
 nats : List Integer
 nats = [0,1,2,3,4,5,6,7,9]
@@ -21,40 +23,39 @@ zeroOddsEvens = [zero] ++ odds ++ evens == [0,1,3,5,7,9,2,4,6,8]
 -- | Complete the result of following functions.
 
 headOList : Bool
-headOList = ?fillme4 == head [5,4,3,2,1]
+headOList = 5 == Vect.head [5,4,3,2,1]
 
 tailOList : Bool
-tailOList = ?fillme5 == tail [0,1,2,3,4,5]
+tailOList = [1,2,3,4,5] == Vect.tail [0,1,2,3,4,5]
 
 lastOList : Bool
-lastOList = ?fillme6 == last [5,4,3,2,1]
+lastOList = 1 == Vect.last [5,4,3,2,1]
 
 initOList : Bool
-initOList = ?fillme7 == init [1,2,3,4,5,6]
+initOList = [1,2,3,4,5] == Vect.init [1,2,3,4,5,6]
 
 lengthOList : Bool
-lengthOList = ?fillme8 == length [1,2,3,4,5]
+lengthOList = 5 == Vect.length [1,2,3,4,5]
 
 reverseTheList : Bool
-reverseTheList = ?fillme9 reverse [1,2,3,4,5]
+reverseTheList = [5,4,3,2,1] == Vect.reverse [1,2,3,4,5]
 
 first3 : Bool
-first3 = ?fillme10 == take 3 [1..10]
+first3 = [1,2,3] == List.take 3 [1..10]
 
 drop3 : Bool
-drop3 = ?fillme11 drop 3 [1..10]
+drop3 = [4,5,6,7,8,9,10] == List.drop 3 [1..10]
 
 countAllTheNumbers : Bool
-countAllTheNumbers = ?fillme12 == sum [1..10]
+countAllTheNumbers = (10 + 9*5) == sum [1..10]
 
 timesAllTheNnumbers : Bool
-timesAllTheNnumbers = ?fillme13 == product [1..10]
+timesAllTheNnumbers = 1*2*3*4*5*6*7*8*9*10 == product [1..10]
 
 elementOrNot : Bool
-elementOrNot = elem 4 ?fillme14 == True
+elementOrNot = Vect.elem 4 [1,4,5] == True
 
 -- | Make this function true
-stopPete : List Nat
-stopPete = ?fillme15 (repeat 3) == [3,3,3,3]
-
+stopPete : Bool
+stopPete = [3] ++ (List.replicate 3 3) == [3,3,3,3]
 -- --------------------------------------------------------------------- [ EOF ]
