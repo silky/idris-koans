@@ -16,7 +16,7 @@ zero : Int
 zero = 0
 
 zeroOddsEvens : Bool
-zeroOddsEvens = ?fillme2 ++ odds ++ ?fillme3 == [0,1,3,5,7,9,2,4,6,8]
+zeroOddsEvens = [zero] ++ odds ++ evens == [0,1,3,5,7,9,2,4,6,8]
 
 -- | Complete the result of following functions.
 
